@@ -100,9 +100,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
-        val welcome = getString(R.string.welcome)
         val displayName = model.displayName
-        startActivity(Intent(this, MainActivity::class.java))
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("USERNAME", displayName)
+        startActivity(intent)
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {

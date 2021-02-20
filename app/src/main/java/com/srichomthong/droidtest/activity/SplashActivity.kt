@@ -1,6 +1,5 @@
 package com.srichomthong.droidtest.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -10,8 +9,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.srichomthong.droidtest.R
-import com.srichomthong.droidtest.ui.login.LoginActivity
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -64,7 +63,7 @@ class SplashActivity : AppCompatActivity() {
         findViewById<Button>(R.id.dummy_button).setOnTouchListener(delayHideTouchListener)
         val timer = Timer("schedule", true);
         timer.schedule(1000) {
-            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+            startActivity(Intent(this@SplashActivity, SignInActivity::class.java))
             this@SplashActivity.finish()
         }
     }

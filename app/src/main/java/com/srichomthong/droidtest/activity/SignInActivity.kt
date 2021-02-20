@@ -19,7 +19,7 @@ class SignInActivity : AppCompatActivity() {
         loginBtn.setOnClickListener {
             if (emailEdt.text.isNotBlank() && passwordEdt.text.isNotBlank()){
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("USERNAME", emailEdt.text.toString())
+                intent.putExtra("USERNAME", emailEdt.text.toString().split("@").first())
                 startActivity(intent)
             }
         }

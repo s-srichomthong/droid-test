@@ -13,6 +13,6 @@ class MainActivity : AppCompatActivity() {
         val extra: String? = intent.getStringExtra("USERNAME")
 
         val usernameTv = findViewById<TextView>(R.id.act_main_username)
-        usernameTv.text = "Welcome $extra"
+        usernameTv.text = "$extra".trim()
     }
 }

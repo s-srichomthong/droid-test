@@ -1,6 +1,7 @@
 package com.srichomthong.droidtest.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -16,6 +17,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.srichomthong.droidtest.R
+import com.srichomthong.droidtest.activity.MainActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -100,12 +102,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
-        // TODO : initiate successful logged in experience
-        Toast.makeText(
-                applicationContext,
-                "$welcome $displayName",
-                Toast.LENGTH_LONG
-        ).show()
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
